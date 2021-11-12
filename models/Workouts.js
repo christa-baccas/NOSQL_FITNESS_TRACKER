@@ -1,7 +1,7 @@
 const mongoose = require("mongoose");
 
 const Schema = mongoose.Schema;
-
+// creating schema for db
 const WorkoutSchema = new Schema({
   exercise:[{
     name: {
