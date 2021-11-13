@@ -1,5 +1,5 @@
 const API = {
-  // fetch call to the api/workouts route to generate the last workout
+  // fetch call to the api/workouts route to generate the workouts
   async getLastWorkout() {
     let res;
     try {
