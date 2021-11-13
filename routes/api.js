@@ -1,6 +1,5 @@
 const router = express.Router();
 const express = require("express");
-const path = require("path");
 const Workout = require("../models/workout.js");
 
 
