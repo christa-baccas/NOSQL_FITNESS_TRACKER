@@ -35,6 +35,14 @@ const workoutSchema = new Schema({
   ],
 });
 
+workoutSchema.virtual("totalDuration").get(function () {
+ // reduce the array to get the total sum of durations
+ return this.exercises.reduce((total, exercise) => {
+  return total + exercise.duration;
+}, 0);
+});
+// The 0 at the end initializes total to start at 0
+
 const Workout = mongoose.model("Workout", workoutSchema);
 
 module.exports = Workout;
