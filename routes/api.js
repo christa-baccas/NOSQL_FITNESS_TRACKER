@@ -3,6 +3,7 @@ const router = express.Router();
 const Workout = require("../models/Workouts");
 
 
+
 router.get("/api/workouts", (req, res) => {
     Workout.find({})
     .then(dbWorkout => {
