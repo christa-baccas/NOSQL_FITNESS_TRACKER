@@ -7,17 +7,17 @@ const workoutSchema = new Schema({
     type: Date,
     default: Date.now,
   },
-  exercise: [
+  exercises: [
     {
-      name: {
-        type: String,
-        trim: true,
-        required: "Enter a workout name.",
-      },
       type: {
         type: String,
         trim: true,
-        required: "Enter the type of workout",
+        required: "Enter a type of workout.",
+      },
+      name: {
+        type: String,
+        trim: true,
+        required: "Enter the name of the workout",
       },
       duration: {
         type: Number,
@@ -25,10 +25,10 @@ const workoutSchema = new Schema({
       weight: {
         type: Number,
       },
-      sets: {
+      reps: {
         type: Number,
       },
-      reps: {
+      sets: {
         type: Number,
       },
     },
@@ -37,8 +37,8 @@ const workoutSchema = new Schema({
 
 workoutSchema.virtual("totalDuration").get(function () {
  // reduce the array to get the total sum of durations
- return this.exercises.reduce((total, exercise) => {
-  return total + exercise.duration;
+ return this.exercises.reduce((total, exercises) => {
+  return total + exercises.duration;
 }, 0);
 });
 // The 0 at the end initializes total to start at 0
